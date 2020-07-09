@@ -1,6 +1,6 @@
 # para roda as tags basta informar: rspec --tag @nome_da_tag
 
-describe'validando dropdown', :rodando_toda_sweet_teste do
+describe'validando caixa de opções dropdown', :rodando_toda_sweet_teste do
 
   it 'selecionando item especifico simples', :play_unico_cenario do
     visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
@@ -24,6 +24,7 @@ describe'validando dropdown', :rodando_toda_sweet_teste do
 
   # método find retorna somente um elemento
   #método all retorna todos os elementos da lista
+  #método sample 'sorteia' qualquer elemento da lista 
 
   it 'qualquer item da lista', :sample do
     visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
