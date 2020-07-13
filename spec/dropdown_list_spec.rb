@@ -6,20 +6,17 @@ describe'validando caixa de opções dropdown', :rodando_toda_sweet_teste do
     visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
     #só funciona para elementos com id's
     select('Loki', from:'dropdown')
-    sleep 3 
   end
 
   it 'selecionando outro'do
     visit'https://training-wheels-protocol.herokuapp.com/dropdown'
     select('Bucky', from:'dropdown')
-    sleep 3
   end
 
   it 'selecionando item sem id com método find', :encontrando_elemento_sem_id do
     visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
     drop = find('.avenger-list')
     drop.find('option', text:'Scott Lang').select_option
-    sleep 3
   end
 
   # método find retorna somente um elemento

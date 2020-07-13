@@ -24,7 +24,7 @@ describe 'Upload', :upload do
   it 'Upload de imagem', :validando_imagem do
     attach_file('file-upload', @imagem)
     click_button('file-submit')
-    sleep 3
+    # puts Capybara.default_max_wait_time = 10 (ver tempo de esperar, para boas práticas devemos remover o sleep e colocar nosso timeout na config do projeto)
     img = find('#new-image')
     expect(img[:src]).to eql 'https://training-wheels-protocol.herokuapp.com/uploads/img4.jpg'
   end

@@ -27,7 +27,6 @@ describe 'Validando tela login' do
         fill_in 'userId', with: 'usuário inválido'
         #Comando para utilizar o teclado (.send_keys)
         find('#userId').send_keys(:backspace)
-        sleep 5
         fill_in 'passId', with: 'senha inválida'
         click_button 'Login'
         expect(find('#flash').visible?).to be true

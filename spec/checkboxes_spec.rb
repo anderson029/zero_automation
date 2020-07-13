@@ -6,7 +6,6 @@ describe'caixa de seleção',:checkbox do
 
   it 'marcando uma opção' do
     check('thor').uncheck
-  
   end
 
   it 'desmarcando checkbox' do
