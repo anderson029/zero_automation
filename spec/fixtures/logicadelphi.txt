@@ -1,0 +1,94 @@
+Lógica do mover
+Cima
+ if (button5.top>0)then
+     begin
+          button5.top:= button5.top -10;
+          Image1.visible:=false;
+     end
+     else
+     begin
+          button5.top:= button5.top +0;
+          Image1.visible:=true;
+       end;                         
+
+
+Direita:
+if (button5.left>=624)then
+     begin
+          button5.left:= button5.left  -0;
+          Image1.visible:=true;
+     end
+  else
+      begin
+           button5.left:= button5.left  +10;
+           Image1.visible:=false;
+      end                 
+
+Baixo:
+ if(button5.top<=426) then
+     begin
+          button5.top:= button5.top  +10;
+          Image1.visible:=false;
+     end
+  else
+      begin
+           button5.top:= button5.top +0;
+           Image1.visible:=true;
+      end;          
+
+Esquerda:
+if(button5.left>=0) then
+     begin
+          button5.left:= button5.left  -10;
+          Image1.visible:=false;
+     end
+  else
+      begin
+           button5.left:= button5.left  +0;
+           Image1.visible:=true;
+      end; 
+
+LÓGICA SEMÁFORO
+DENTRO DO TIMER
+if (vez=0) then
+  begin
+      Image1.visible:=true;
+      Image2.Visible:=false;
+      Image3.visible:=false;
+      vez:= vez +1;
+  end
+  else if (vez=1) then
+  begin
+      Image1.visible:=false;
+      Image2.Visible:=true;
+      Image3.visible:=false;
+      vez:= vez +1;
+  end
+  else
+  begin
+      Image1.visible:=false;
+      Image2.Visible:=false;
+      Image3.visible:=true;
+      vez:= 0;
+      end;  
+BOTÃO INICIAR Timer1.enabled:=true; 
+
+LOGICA CORRIDA
+ a := 1 + Random(100);
+
+   if Image1.left <=1470 then
+      begin
+        Image1.left:= Image1.left + a;
+        end
+   else
+   begin
+     Timer1.enabled:=false;
+     Timer2.enabled:=false;
+     Timer3.enabled:=false;
+      end;              
+
+       
+
+                 
+
+
