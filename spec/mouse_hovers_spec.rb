@@ -29,3 +29,10 @@ describe 'Mouse hover', :hovers do
     sleep 5 # temporário somente para verificar o resultado
   end
 end
+
+=begin
+Montando selctor css com expressão regular 
+ Utilizando ^ (circunflexo) = elemento na página que inicia o conteúdo Pantera EX: $('img[alt^=Pantera]');
+ Utilizando $ (cifrão) = busca de elemento com o valor final do selector aranha EX: $('img[alt$=Aranha]');
+ Utilizando * (asterísco) = busca um valor que contenha no inicio ou no fim o  valor mencionado EX: $('img[alt*=Aranha]');
+=end
