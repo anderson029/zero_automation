@@ -1,7 +1,7 @@
-describe 'Login com cadastro' do
+describe 'Login com cadastro', :smoke do
 
   before(:each) do
-    visit'https://training-wheels-protocol.herokuapp.com/access'
+    visit'/access'
   end
 
   it 'Login com sucesso', :tst1 do

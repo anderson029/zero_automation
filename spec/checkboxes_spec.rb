@@ -1,7 +1,7 @@
-describe'caixa de seleção',:checkbox do
+describe'caixa de seleção',:checkbox ,:smoke do
 
   before(:each) do
-    visit 'https://training-wheels-protocol.herokuapp.com/checkboxes'
+    visit '/checkboxes'
   end
 
   it 'marcando uma opção' do

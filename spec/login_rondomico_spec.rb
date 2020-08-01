@@ -1,7 +1,7 @@
-describe 'Login 2', :rand do
+describe 'Login 2', :rand, :smoke do
 
     before(:each) do
-        visit 'https://training-wheels-protocol.herokuapp.com/login2'
+        visit '/login2'
     end
 
     it 'com data de nascimento', :campo_randomico do

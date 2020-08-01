@@ -1,7 +1,7 @@
-describe 'teclado', :key do
+describe 'teclado', :key, :smoke do
 
   before(:each) do
-    visit 'https://training-wheels-protocol.herokuapp.com/key_presses'
+    visit '/key_presses'
   end
 
   it 'simulando as teclas símbolos' do

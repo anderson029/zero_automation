@@ -1,8 +1,8 @@
 # para roda as tags basta informar: rspec --tag @nome_da_tag
 
-describe'validando caixa de opções dropdown', :rodando_toda_sweet_teste do
+describe'validando caixa de opções dropdown', :rodando_toda_sweet_teste, :smoke do
   before(:each) do
-    visit'https://training-wheels-protocol.herokuapp.com/dropdown'
+    visit'/dropdown'
   end
   
   it 'selecionando item especifico simples', :play_unico_cenario do

@@ -1,7 +1,8 @@
-describe 'Validando tela login' do
+describe 'Validando tela login', :smoke do
+
     it 'login sucesso'do
         #comando visitar página
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
         #comando preencher
         fill_in 'userId', with: 'stark'
         fill_in 'passId', with: 'jarvis!'
@@ -17,13 +18,13 @@ describe 'Validando tela login' do
     end
 
     it 'login sem informar crendenciais' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
         click_button 'Login'
         expect(find('#flash').text).to include 'O usuário informado não está cadastrado!'
     end
    
     it 'login com credencial inválida' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
         fill_in 'userId', with: 'usuário inválido'
         #Comando para utilizar o teclado (.send_keys)
         find('#userId').send_keys(:backspace)

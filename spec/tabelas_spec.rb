@@ -1,6 +1,6 @@
-describe 'Tabelas', :tabs do
+describe 'Tabelas', :tabs, :smoke do
     before(:each)do
-        visit'https://training-wheels-protocol.herokuapp.com/tables#'
+        visit'/tables#'
     end
     # find = retorna um único elemento
     # all = retorna todos os elementos em array 
