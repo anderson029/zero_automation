@@ -25,9 +25,11 @@ RSpec.configure do |config|
   end
 
   #configurando screenshot para todos os cenários
+  #exception = quando o cenário falha ele traz a excessão do erro
+
   config.after(:example) do |ex|
     nome_cenario = ex.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ','_')
-    page.save_screenshot('log/'+ nome_cenario + '.png')
+    page.save_screenshot('log/'+ nome_cenario + '.png') if ex.exception
   end
 end
 
