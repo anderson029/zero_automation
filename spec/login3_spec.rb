@@ -1,4 +1,4 @@
-describe 'Login com cadastro', :smoke do
+describe 'Login com cadastro',:login_unico, :smoke do
 
   before(:each) do
     visit'/access'
@@ -18,6 +18,9 @@ describe 'Login com cadastro', :smoke do
     click_button ('Entrar')
     mensagem = find('#flash')
     expect(mensagem.text).to include 'Olá, Tony Stark. Você acessou a área logada!'
+
+    #configurando para criar evidências dos testes pode ser do tipo png, jpeg...
+   # page.save_screenshot('log/login_sucesso.png')
   end
 
   it 'login utilizando escopo', :tst2 do
@@ -29,6 +32,15 @@ describe 'Login com cadastro', :smoke do
     end
       mensagem = find('#flash')
       expect(mensagem.text).to include 'Olá, Tony Stark. Você acessou a área logada!'
+  end
+
+  it 'senha inválida',:senha_incorreta do
+    find('#usernameId').set 'stark'
+    find('#passwordId').set 'senha inválida'
+    click_button('Entrar')
+    msg = find('#flash')
+    expect(msg.visible?).to be true
+    expect(msg.text).to include 'Senha é invalida!'
   end
 
   it 'cadastro com sucesso', :tst3 do
@@ -43,4 +55,14 @@ describe 'Login com cadastro', :smoke do
      mensagem = find('#result')
     expect(mensagem.text). to include 'Dados enviados. Aguarde aprovação do seu cadastro!'
   end
+
+=begin
+  #trazendo as descrição de cada cenário e tirando screen shot somente desse cenário
+  na pasta spec_helper contém a configuração para tirar print no projeto todo
+  
+  after(:each) do |ex|
+    nome = ex.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ','_')
+    page.save_screenshot('log/'+ nome + '.png')
+  end
+=end
 end

@@ -18,9 +18,16 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.include Capybara::DSL
+
   #configurando tamanho da tela para todos os cenários do projeto
   config.before(:example) do
     page.current_window.resize_to(1280, 800)
+  end
+
+  #configurando screenshot para todos os cenários
+  config.after(:example) do |ex|
+    nome_cenario = ex.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ','_')
+    page.save_screenshot('log/'+ nome_cenario + '.png')
   end
 end
 
