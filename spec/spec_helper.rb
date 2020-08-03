@@ -29,13 +29,15 @@ RSpec.configure do |config|
 
   config.after(:example) do |ex|
     nome_cenario = ex.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ','_')
-    page.save_screenshot('log/'+ nome_cenario + '.png') if ex.exception
+    page.save_screenshot('log/'+ nome_cenario + '.png') #if ex.exception
   end
 end
 
 Capybara.configure do |config|
+#headless = o navegador não é apresentado
+  config.default_driver = :selenium_chrome_headless
+  #config.default_driver = :selenium_chrome
   #config.default_driver = :selenium
-  config.default_driver = :selenium_chrome
   config.default_max_wait_time = 10
   config.app_host = 'https://training-wheels-protocol.herokuapp.com'
 end
