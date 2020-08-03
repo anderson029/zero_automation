@@ -13,9 +13,10 @@ describe 'Tabelas', :tabs, :smoke do
         expect(tony.text).to include '$ 10.000.000'
     end
 
-    it 'Validando o sálario do Vin diesel' do
-        atores = all('table tbody tr', text: '@vindiesel')
-        expect(atores.text).to include '$ 10.000.000'
+    it 'Validando o sálario do Vin diesel', :tsttt do
+        atores = all('table tbody tr')
+        vin = atores.detect{|ator|ator.text.include?('@vindiesel')}
+        expect(vin.text).to include '$ 10.000.000'
     end
 
     it 'validando o salário do tony chamando pela array', :sal_tony do
